@@ -1,0 +1,25 @@
+html,
+body{
+    height: 100%;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    @extend %Inter-500;
+}
+main{
+    flex-grow: 1;
+}
+.container{
+    max-width: 1130px;
+    margin: 0 auto;
+    padding: 0 5px;
+}
+.btn{
+    color: #fff;
+    padding: 16px 56px;
+    border: 1px solid #fff;
+    border-radius: 6px;
+    display: inline-block;
+}
