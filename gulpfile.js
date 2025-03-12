@@ -11,7 +11,7 @@ function browsersync() {
     browserSync.init({
         server: {
             baseDir: 'app/'
-            
+
         },
         notify: false
     })
@@ -19,7 +19,7 @@ function browsersync() {
 
 function styles() {
     return src('app/scss/style.scss')
-        .pipe(scss({outputStyle: 'compressed'}))
+        .pipe(scss({ outputStyle: 'compressed' }))
         .pipe(concat('style.min.css'))
         .pipe(autoprefixer({
             overrideBrowserslist: ['last 10 versions'],
@@ -28,24 +28,27 @@ function styles() {
         .pipe(dest('app/css'))
         .pipe(browserSync.stream())
 }
-function scripts(){
+function scripts() {
     return src([
         'node_modules/jquery/dist/jquery.js',
+        'node_modules/slick-carousel/slick/slick.js',
+        'node_modules/rateyo/src/jquery.rateyo.js',
+        'node_modules/mixitup/dist/mixitup.js',
         'app/js/main.js'
     ])
-    .pipe(concat('main.min.js'))
-    .pipe(uglify())
-    .pipe(dest('app/js'))
-    .pipe(browserSync.stream())
+        .pipe(concat('main.min.js'))
+        .pipe(uglify())
+        .pipe(dest('app/js'))
+        .pipe(browserSync.stream())
 }
 
-function build(){
+function build() {
     return src([
         'app/**/*.html',
         'app/css/style.min.css',
         'app/js/main.min.js'
-    ], {base: 'app'})
-    .pipe(dest('dist'))
+    ], { base: 'app' })
+        .pipe(dest('dist'))
 }
 function cleanDist() {
     return del('dist')
