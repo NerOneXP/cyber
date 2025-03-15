@@ -476,6 +476,14 @@
         max-width: 268px;
         height: 48px;
         @extend %Inter-500;
+        display: -webkit-box;
+        line-clamp: 2;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+        white-space: normal;
     }
 
     &__fav {

@@ -90,7 +90,16 @@ $(function () {
     initSliders();
   });
 
+  $('.menu-btn').on('click', function () {
+    $('.menu').toggleClass('menu--active');
+  });
 
+
+  $(document).ready(function () {
+    $(".product-content__fav").on("click", function () {
+      $(this).find("svg path").toggleClass("active");
+    });
+  });
   $(document).ready(function () {
     const $subnav = $('.subnav');
 
@@ -106,6 +115,6 @@ $(function () {
       }
     });
   });
-  var mixer = mixitup('.product-content' )
-  
+  var mixer = mixitup('.product-content')
+
 });
