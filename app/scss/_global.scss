@@ -48,16 +48,3 @@ main {
         }
     }
 
-    .menu{
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        display: block;
-        text-align: center;
-        border-top: none;
-        border-right: none;
-        border-left: none;
-        transform: translateY(-100%);
-        transition: all 1s;
-    }
