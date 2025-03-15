@@ -90,9 +90,11 @@ $(function () {
     initSliders();
   });
 
-  $('.menu__btn').on('click', function () {
-    $('.menu__lists').toggleClass('menu__lists--active');
+  $('.menu-btn').on('click', function () {
+    $('.menu').toggleClass('menu--active');
   });
+
+
   $(document).ready(function () {
     $(".product-content__fav").on("click", function () {
       $(this).find("svg path").toggleClass("active");
